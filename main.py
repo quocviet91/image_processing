@@ -9,7 +9,7 @@ class ShipDetection:
     def __init__(   self, 
                     opt_args,
                     image_path="three_ships_horizon.JPG",
-                    output_image_path="./results/cropped_ships.tiff"
+                    output_image_path="./results/three_ships_boxed.tiff"
                     ):
         # set self variables
         self.image_path = image_path
@@ -239,12 +239,12 @@ class ShipDetection:
 
         return dst
     
-    def export_result_image(self, out_img, output_img_path="./results/cropped_ships.tiff"):
+    def export_result_image(self, out_img, output_img_path="./results/three_ships_boxed.tiff"):
         """Save result image into specific path
 
         Args:
             out_img (_type_): output image array
-            output_img_path (str, optional): output image path. Defaults to "./results/cropped_ships.tiff".
+            output_img_path (str, optional): output image path. Defaults to "./results/three_ships_boxed.tiff".
         """
         # create base folder if not existed
         base_folder = os.path.dirname(output_img_path)
@@ -386,6 +386,6 @@ if __name__ == "__main__":
     # declare ShipDetection object    
     ship_detection = ShipDetection(opt_args=opt,
                                    image_path="./three_ships_horizon.JPG",
-                                   output_image_path="./results/cropped_ships.tiff")
+                                   output_image_path="./results/three_ships_boxed.tiff")
     # run solution
     ship_detection.run()
